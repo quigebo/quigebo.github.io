@@ -1652,6 +1652,10 @@ select {
     --tw-bg-opacity: 1;
     background-color: rgb(191 219 254 / var(--tw-bg-opacity));
   }
+  .xl\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
   .xl\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1671,6 +1675,10 @@ select {
   .\32xl\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+  .\32xl\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 }
 

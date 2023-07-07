@@ -1,41 +1,251 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>The Attention Rollercoaster - Stephen Wooten</title><meta name=generator content="Hugo 0.114.1"><link rel=stylesheet href=/css/styles.css><script>(function(e,t,n,s,o,i,a){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},i=t.createElement(n),i.async=1,i.src=s,a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(i,a)})(window,document,"script","https://assets.mailerlite.com/js/universal.js","ml"),ml("account","488014")</script></head><body class="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400"><header class="mx-auto w-screen max-w-screen-2xl px-6 sm:px-7 xl:px-8 2xl:px-10 py-6"><style type=text/css>input#nav-toggle:checked~label#show-button{display:none}input#nav-toggle:checked~label#hide-button{display:flex}input#nav-toggle:checked~#nav-menu{display:block}</style><nav class="flex items-center justify-between flex-wrap"><a href=http://stephenwooten.com/ class="flex items-center text-slate-800 dark:text-slate-200 font-bold">Stephen Wooten</a>
-<input id=nav-toggle type=checkbox class=hidden>
-<label id=show-button for=nav-toggle class="flex items-center sm:hidden text-slate-600 dark:text-slate-400 hover:text-sky-500"><svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg></label><label id=hide-button for=nav-toggle class="items-center hidden text-gray-700 hover:text-blue-500"><svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="sm:flex w-full sm:w-auto hidden mt-2 sm:mt-0 sm:space-x-2"><li><a href=http://stephenwooten.com/thoughts/ class="hover:text-sky-500 dark:hover:text-sky-500">Thoughts</a></li><li><label class=sr-only>Theme</label>
-<button type=button id=theme-toogle onclick=changeTheme() class="py-1 hover:text-sky-500 dark:hover:text-sky-500"><svg id="theme-toggle-dark" class="w-4 h-4 hidden" fill="currentcolor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15"/></svg><svg id="theme-toggle-light" class="w-4 h-4 hidden" fill="currentcolor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 1c8.279.0 15 6.721 15 15S24.279 31 16 31 1 24.279 1 16 7.721 1 16 1zm0 4C9.929 5 5 9.929 5 16c0 6.071 4.929 11 11 11 6.071.0 11-4.929 11-11C27 9.929 22.071 5 16 5z"/></svg><svg id="theme-toggle-system" class="w-4 h-4 hidden" fill="currentcolor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g><path d="M16 1c8.279.0 15 6.721 15 15S24.279 31 16 31 1 24.279 1 16 7.721 1 16 1zm0 4C9.929 5 5 9.929 5 16c0 6.071 4.929 11 11 11 6.071.0 11-4.929 11-11C27 9.929 22.071 5 16 5z"/><path d="M16 31C7.721 31 1 24.279 1 16S7.721 1 16 1V31z"/></g></svg></button></li></ul></nav><script>var themeDarkIcon=document.getElementById("theme-toggle-dark"),themeLightIcon=document.getElementById("theme-toggle-light"),themeSystemIcon=document.getElementById("theme-toggle-system");function setThemeVisibility(e){switch(e){case"system":themeSystemIcon.classList.toggle("hidden");break;case"light":themeLightIcon.classList.toggle("hidden");break;case"dark":themeDarkIcon.classList.toggle("hidden")}}function changeTheme(){themeSystemIcon.classList.contains("hidden")==!1?(themeSystemIcon.classList.toggle("hidden"),themeLightIcon.classList.toggle("hidden"),localStorage.setItem("color-theme","light"),document.documentElement.classList.remove("dark")):themeLightIcon.classList.contains("hidden")==!1?(themeLightIcon.classList.toggle("hidden"),themeDarkIcon.classList.toggle("hidden"),localStorage.setItem("color-theme","dark"),document.documentElement.classList.add("dark")):themeDarkIcon.classList.contains("hidden")==!1?(themeDarkIcon.classList.toggle("hidden"),themeSystemIcon.classList.toggle("hidden"),localStorage.removeItem("color-theme"),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark")):(themeSystemIcon.classList.remove("hidden"),themeLightIcon.classList.add("hidden"),themeDarkIcon.classList.add("hidden"),localStorage.removeItem("color-theme"),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("dark"))}function setupThemeIndicator(){if(localStorage.getItem("color-theme")==="dark")var e="dark";else localStorage.getItem("color-theme")==="light"?(e="light"):(e="system");setThemeVisibility(e)}window.onload=setupThemeIndicator</script></header><main class="flex-1 grow mx-auto w-screen max-w-screen-2xl px-6 sm:px-7 xl:px-8 2xl:px-10 pt-4 sm:pt-16"><article class="justify-self-center mx-auto px-6 mb-16 sm:px-4 md:px-0 prose dark:prose-invert prose-slate lg:prose-lg hover:prose-a:text-sky-500"><h1>The Attention Rollercoaster</h1><p><img src=https://stephenwooten-blog.s3.amazonaws.com/roller-coaster.png alt="attention roller coaster"></p><p>As soon as we wake up, we&rsquo;re strapped into a non-stop rollercoaster ride of
+<!DOCTYPE html>
+<html lang='en-us'>
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Attention Rollercoaster - Stephen Wooten</title><meta name="generator" content="Hugo 0.114.1">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+
+  
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '488014');
+  </script>
+  
+</head>
+
+
+  <body class="flex flex-col min-h-screen bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-400"><header class="mx-auto w-screen max-w-screen-2xl px-6 sm:px-7 xl:px-32 2xl:px-32 py-6">
+    
+    <style type="text/css">
+        input#nav-toggle:checked~label#show-button {
+            display: none;
+        }
+
+        input#nav-toggle:checked~label#hide-button {
+            display: flex;
+        }
+
+        input#nav-toggle:checked~#nav-menu {
+            display: block;
+        }
+    </style>
+
+    <nav class="flex items-center justify-between flex-wrap">
+        <a href="http://stephenwooten.com/" class="flex items-center text-slate-800 dark:text-slate-200 font-bold">
+            Stephen Wooten
+        </a>
+
+        <input id="nav-toggle" type=checkbox class="hidden">
+        <label id="show-button" for="nav-toggle"
+            class="flex items-center sm:hidden text-slate-600 dark:text-slate-400 hover:text-sky-500">
+            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu Open</title>
+                <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z" />
+            </svg>
+        </label>
+        <label id="hide-button" for="nav-toggle" class="items-center hidden text-gray-700 hover:text-blue-500">
+            <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu Close</title>
+                <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+                    transform="rotate(45 10 10)" />
+            </svg>
+        </label>
+
+        <ul id="nav-menu" class="sm:flex w-full sm:w-auto hidden mt-2 sm:mt-0 sm:space-x-2">
+            
+            <li>
+                <a href="http://stephenwooten.com/thoughts/" class="hover:text-sky-500 dark:hover:text-sky-500">Thoughts</a>
+            </li>
+            
+            
+            <li>
+                <a href="http://stephenwooten.com/about/" class="hover:text-sky-500 dark:hover:text-sky-500">About</a>
+            </li>
+            
+            <li>
+                <label class="sr-only">Theme</label>
+                <button type="button" id="theme-toogle" onclick="changeTheme()"
+                    class="py-1 hover:text-sky-500 dark:hover:text-sky-500">
+                    <svg id="theme-toggle-dark" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="15" />
+                    </svg>
+                    <svg id="theme-toggle-light" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16,1C24.279,1 31,7.721 31,16C31,24.279 24.279,31 16,31C7.721,31 1,24.279 1,16C1,7.721 7.721,1 16,1ZM16,5C9.929,5 5,9.929 5,16C5,22.071 9.929,27 16,27C22.071,27 27,22.071 27,16C27,9.929 22.071,5 16,5Z" />
+                    </svg>
+                    <svg id="theme-toggle-system" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path
+                                d="M16,1C24.279,1 31,7.721 31,16C31,24.279 24.279,31 16,31C7.721,31 1,24.279 1,16C1,7.721 7.721,1 16,1ZM16,5C9.929,5 5,9.929 5,16C5,22.071 9.929,27 16,27C22.071,27 27,22.071 27,16C27,9.929 22.071,5 16,5Z" />
+                            <path d="M16,31C7.721,31 1,24.279 1,16C1,7.721 7.721,1 16,1L16,31Z" />
+                        </g>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        var themeDarkIcon = document.getElementById("theme-toggle-dark");
+        var themeLightIcon = document.getElementById("theme-toggle-light");
+        var themeSystemIcon = document.getElementById("theme-toggle-system");
+
+        function setThemeVisibility(themeParameter) {
+            switch (themeParameter) {
+                case "system":
+                    themeSystemIcon.classList.toggle("hidden");
+                    break;
+                case "light":
+                    themeLightIcon.classList.toggle("hidden");
+                    break;
+                case "dark": themeDarkIcon.classList.toggle("hidden");
+            }
+        }
+
+        function changeTheme() {
+            if (themeSystemIcon.classList.contains("hidden") == false) {
+                themeSystemIcon.classList.toggle("hidden");
+                themeLightIcon.classList.toggle("hidden");
+                localStorage.setItem("color-theme", "light");
+                document.documentElement.classList.remove('dark');
+            } else if (themeLightIcon.classList.contains("hidden") == false) {
+                themeLightIcon.classList.toggle("hidden");
+                themeDarkIcon.classList.toggle("hidden");
+                localStorage.setItem("color-theme", "dark");
+                document.documentElement.classList.add('dark');
+            } else if (themeDarkIcon.classList.contains("hidden") == false) {
+                themeDarkIcon.classList.toggle("hidden");
+                themeSystemIcon.classList.toggle("hidden");
+                localStorage.removeItem("color-theme");
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                }
+            } else {
+                 
+                themeSystemIcon.classList.remove("hidden");
+                themeLightIcon.classList.add("hidden");
+                themeDarkIcon.classList.add("hidden");
+                localStorage.removeItem("color-theme");
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.classList.add('dark');
+                }
+            }
+        }
+
+        function setupThemeIndicator() {
+             
+            if (localStorage.getItem("color-theme") === "dark") {
+                var themeParameter = "dark";
+            } else if (localStorage.getItem("color-theme") === "light") {
+                var themeParameter = "light";
+            } else {
+                var themeParameter = "system";
+            }
+
+            setThemeVisibility(themeParameter);
+        }
+
+        window.onload = setupThemeIndicator;
+    </script>
+</header>
+<main class="flex-1 grow mx-auto w-screen max-w-screen-2xl px-6 sm:px-7 xl:px-8 2xl:px-10 pt-4 sm:pt-16">
+  <article
+      class="justify-self-center mx-auto px-6 mb-16 sm:px-4 md:px-0 prose dark:prose-invert prose-slate lg:prose-lg hover:prose-a:text-sky-500">
+      <h1>The Attention Rollercoaster</h1>
+      <p><img src="https://stephenwooten-blog.s3.amazonaws.com/roller-coaster.png" alt="attention roller coaster"></p>
+<p>As soon as we wake up, we&rsquo;re strapped into a non-stop rollercoaster ride of
 stimulations that command our attention. Our hearts pound with rage or break
 with despair with each news headline, while our minds, chained to our phones,
 hungrily seek dopamine fixes. Our thoughts dart between the shadow of a past
-that wasn&rsquo;t and a future that might never come.</p><p>By the end of the day, we&rsquo;re depleted of energy that could have been invested
-in things more aligned with our higher purpose.</p><figure class="max-w-screen-md mx-auto text-center"><svg aria-hidden="true" class="w-12 h-12 mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18V10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8h4V18H14.017zM0 18V10.609C0 4.905 3.748 1.038 9 0l.996 2.151C7.563 3.068 6 5.789 6 8H9.983V18H0z" fill="currentcolor"/></svg><blockquote><p class="text-2xl italic font-medium text-gray-900 dark:text-white">A new type of thinking is essential if mankind is to survive and move toward higher levels.</p></blockquote><figcaption class="flex items-center justify-end mt-6 space-x-3"><div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700"><cite class="pr-3 font-medium text-gray-900 dark:text-white">Albert Einstein</cite></div></figcaption></figure><h2 id=improve-your-attention-improve-your-life>Improve your attention, improve your life</h2><p>Many of us know we&rsquo;re caught in a loop of endless distractions but don&rsquo;t know
+that wasn&rsquo;t and a future that might never come.</p>
+<p>By the end of the day, we&rsquo;re depleted of energy that could have been invested
+in things more aligned with our higher purpose.</p>
+<figure class="max-w-screen-md mx-auto text-center">
+  <svg aria-hidden="true" class="w-12 h-12 mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+  <blockquote>
+    <p class="text-2xl italic font-medium text-gray-900 dark:text-white">
+    A new type of thinking is essential if mankind is to survive and move toward higher levels.
+    </p>
+  </blockquote>
+  <figcaption class="flex items-center justify-end mt-6 space-x-3">
+    <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+      <cite class="pr-3 font-medium text-gray-900 dark:text-white">Albert Einstein</cite>
+    </div>
+  </figcaption>
+</figure>
+
+
+<h2 id="improve-your-attention-improve-your-life">Improve your attention, improve your life</h2>
+<p>Many of us know we&rsquo;re caught in a loop of endless distractions but don&rsquo;t know
 how to stop. On top of that, entire industries, armed with billions of dollars
 and teams of skilled data scientists are relentlessly refining their algorithms
-to keep us hooked.</p><p>To even stand a chance in this war of attention, you need to improve your
+to keep us hooked.</p>
+<p>To even stand a chance in this war of attention, you need to improve your
 brain&rsquo;s &ldquo;algorithm&rdquo; to align your thoughts and behavior with what truly matters
-to you.</p><p>Picture being alone in a cabin in the woods with no phone or WiFi. Your
+to you.</p>
+<p>Picture being alone in a cabin in the woods with no phone or WiFi. Your
 behavior would change dramatically! No more endless scrolling on social media -
 it&rsquo;s just you and your thoughts. Sure, you may still get lost in a daydream,
-but a single source of distractions is easier to figure out.</p><p>But, it&rsquo;s not realistic for most of us to hide away in a cabin to escape
+but a single source of distractions is easier to figure out.</p>
+<p>But, it&rsquo;s not realistic for most of us to hide away in a cabin to escape
 distractions. We need to learn how to limit these intrusions in our modern-day
-lives.</p><p>Improving your attention will improve your productivity, but it&rsquo;s not just
+lives.</p>
+<p>Improving your attention will improve your productivity, but it&rsquo;s not just
 about checking off more items on your to-do list. Being more intentional is
 about crafting a life of your <em>choice</em>, where your focus aligns with what truly
-matters to you.</p><p>Instead of being a passenger on the rollercoaster, you become the captain of
-the ride.</p><h2 id=embrace-a-journey-of-1000-miles>Embrace a journey of 1,000 miles</h2><p>Learning how to align your thoughts and actions with what you value is called
-self-improvement.</p><p>With nearly 2 billion &lsquo;self-improvement&rsquo; results on Google, it would be easy to
+matters to you.</p>
+<p>Instead of being a passenger on the rollercoaster, you become the captain of
+the ride.</p>
+<h2 id="embrace-a-journey-of-1000-miles">Embrace a journey of 1,000 miles</h2>
+<p>Learning how to align your thoughts and actions with what you value is called
+self-improvement.</p>
+<p>With nearly 2 billion &lsquo;self-improvement&rsquo; results on Google, it would be easy to
 get lost in all of the tutorials, tips, tricks, hacks and frameworks people
 have devised over the years. In a way, this is just another example of
-information overload.</p><p>I would know, i&rsquo;ve tried a lot of them!</p><p>My own self-improvement journey started when I was young, inspired by my
+information overload.</p>
+<p>I would know, i&rsquo;ve tried a lot of them!</p>
+<p>My own self-improvement journey started when I was young, inspired by my
 mother&rsquo;s bookshelf. Books like &ldquo;The 7 Habits of Highly Effective People&rdquo; and
 &ldquo;Emotional Vampires: Dealing With People Who Drain You Dry&rdquo; sparked my interest
-in human psychology and techniques to improve my life.</p><p>Since then, i&rsquo;ve devoured countless more books, participated in, and even led
+in human psychology and techniques to improve my life.</p>
+<p>Since then, i&rsquo;ve devoured countless more books, participated in, and even led
 courses on Habit Design. I also went through therapy for a time and have even
 worked with a Tony Robbins coach. My ongoing self-improvement quest is
 reflected in my <a href="https://www.amazon.com/hz/wishlist/ls/3PADIA62DJNXN/ref=nav_wishlist_lists_1">Amazon Wish List</a>,
-a list of books I&rsquo;ve been curating since 2014!</p><p>As you try out different ideas, you&rsquo;ll start noticing patterns between these 2
+a list of books I&rsquo;ve been curating since 2014!</p>
+<p>As you try out different ideas, you&rsquo;ll start noticing patterns between these 2
 billion ideas and more importantly, you&rsquo;ll come to understand the strengths and
 weaknesses of these patterns. Remember, what works for one person won&rsquo;t work
-for you and what worked for you last year, may not work for you this year.</p><p>In essence, self-improvement boils down to three key points:</p><ul><li>How to foster thoughts and behaviors that benefit you</li><li>How to discourage thoughts and behavior that hinder you</li><li>And importantly, understanding the difference between the two</li></ul><h2 id=oh-and-really-quick>Oh, and really quick&mldr;</h2><p>We haven&rsquo;t officially met. My name is Stephen. You are?</p><h2 id=reclaiming-your-time-and-attention>Reclaiming your time and attention</h2><p>I want to help you experience the &ldquo;cabin in the woods&rdquo; idea no
-matter where you are in the world.</p><p>Imagine a place where you can put down the heaviness of life. A place dedicated
-to peace, tranquility, and focus. A place dedicated entirely to you.</p><p>At least for a little while.</p><p>In my next post, i&rsquo;ll help you find the perfect time in your day to visit your
+for you and what worked for you last year, may not work for you this year.</p>
+<p>In essence, self-improvement boils down to three key points:</p>
+<ul>
+<li>How to foster thoughts and behaviors that benefit you</li>
+<li>How to discourage thoughts and behavior that hinder you</li>
+<li>And importantly, understanding the difference between the two</li>
+</ul>
+<h2 id="reclaiming-your-time-and-attention">Reclaiming your time and attention</h2>
+<p>I want to help you experience the &ldquo;cabin in the woods&rdquo; idea no
+matter where you are in the world.</p>
+<p>Imagine a place where you can put down the heaviness of life. A place dedicated
+to peace, tranquility, and focus. A place dedicated entirely to you.</p>
+<p>At least for a little while.</p>
+<p>In my next post, i&rsquo;ll help you find the perfect time in your day to visit your
 cabin in the woods and if you share your email below, i&rsquo;ll send the post
-straight to your inbox.</p></article><div class=ml-embedded data-form=miWI0Z></div></main><footer class="bottom-0 w-full p-4 text-xs text-center text-slate-500 border-t border-slate-200 dark:border-slate-700"></footer></body></html>
+straight to your inbox.</p>
+
+  </article>
+  <div class="ml-embedded" data-form="miWI0Z"></div>
+
+    </main><footer class="bottom-0 w-full p-4 text-xs text-center text-slate-500 border-t border-slate-200 dark:border-slate-700">
+</footer>
+</body>
+</html>
